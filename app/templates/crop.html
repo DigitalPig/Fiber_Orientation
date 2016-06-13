@@ -31,9 +31,15 @@
 
 <div id="test-relative">
 <h2>Relative test</h2>
-<img src="{{ url_for('static',filename='images/'+image)}}"
+<div class="picture">
+  <p> Here is the picture that you just uploaded. Please use the mouse to crop
+  it to contain the region that you want the line detection algorithm to
+  work. The program pops up the dimension data for you automatically. After you
+  are done, please press submit to continue.
+  </p>
+  <img src="{{ url_for('static',filename='images/'+image)}}"
 alt="Test image" id="testImage" />
-
+</div>
 <form action="" method="post">
 <p>
 <label for="x1">x1:</label>

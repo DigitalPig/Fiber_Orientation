@@ -164,7 +164,7 @@ def analysis(filename, x1, y1, x2, y2):
     mean = 'Angle mean is:{0:.2f}'.format(np.mean(angles))
     std = 'Angle standard deviation is: {0:.2f}'.format(np.std(angles))
     kurtosis = 'Kurtosis is: {0:.2f}'.format(stats.kurtosis(angles))
-    skewness = 'Skeness is: {0:.2f}'.format(stats.skew(angles))
+    skewness = 'Skewness is: {0:.2f}'.format(stats.skew(angles))
     return render_template('analysis.html', figure1=figfile1_data, script=b_script,
                            div=b_div,
                            mean=mean,
