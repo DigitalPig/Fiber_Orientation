@@ -113,10 +113,10 @@ def index():
 @app.route('/crop/<filename>', methods=['GET', 'POST'])
 def crop(filename):
     if request.method == 'POST':
-        x1 = request.form['x1']
-        y1 = request.form['y1']
-        x2 = request.form['x2']
-        y2 = request.form['y2']
+        x1 = request.form['x1'].split('.')[0]
+        y1 = request.form['y1'].split('.')[0]
+        x2 = request.form['x2'].split('.')[0]
+        y2 = request.form['y2'].split('.')[0]
         return redirect(url_for('analysis', filename=filename,
                                 x1=x1, y1=y1, x2=x2, y2=y2))
     return render_template('crop.html', title='crop the image',
