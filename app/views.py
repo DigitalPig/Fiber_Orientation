@@ -82,6 +82,8 @@ def generate_plots(in_image, sigma, threshold, line_length, line_gap):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     need_delete = []
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
     if os.listdir(app.config['UPLOAD_FOLDER']) != []:
         for item in os.listdir(app.config['UPLOAD_FOLDER']):
             file_atime = os.path.getatime(os.path.join(app.config['UPLOAD_FOLDER'],
